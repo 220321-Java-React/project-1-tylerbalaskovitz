@@ -1,10 +1,12 @@
 package com.revature.controllers;
 
-import java.util.logging.Handler;
+
 
 import com.google.gson.Gson;
 import com.revature.models.LoginDTO;
 import com.revature.services.AuthService;
+
+import io.javalin.http.Handler;
 
 public class AuthController {
 
