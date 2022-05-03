@@ -1,7 +1,7 @@
 package com.revature.controllers;
 
 
-
+//GSON is only in the controller layer.
 import com.google.gson.Gson;
 import com.revature.models.LoginDTO;
 import com.revature.services.AuthService;
