@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krusty Krab</title>
+    <title>ERS- Manager's Page</title>
     
     <!-- Here, I've pasted in some bootstrap for the sake of STYLE-->
     <link
@@ -25,27 +25,20 @@
     <!-- Everything within this div will get styled with the appropriate bootstrap styling-->
     <div class="container">
 
-        <h3>Welcome to the Employee Reimbursement System Login!</h3>
+        <h3>Welcome Finance Managers!</h3>
 
-        <div id="loginRow" class="row">
-            <h3 id="welcomeHead">Please Enter Your Username and Password</h3>
-            <input id="username" placeholder="Username"/>
-            <input id="password" type="password" placeholder="Password"/>
-            <button id="loginButton" class="btn btn-primary col-sm-3">Login</button>
-        <!-- col-sm-3? this will make the login button take up 25% of the row -->
-        <!-- col-sm-12 for instance would make the button take up the entire row -->
-        </div>
+       
 
        <br>
        <br>
 
         <!-- With our CLI in P0, we were able to populate our DB data in the Java console -->
         <!-- But now, we have a webpage and we need a way to store the data we gather -->
-        <!-- I want a table of employee information which we'll SELECT from the DB -->
+        <!-- I want a table of employee information which we'll SELECT from the DB -->     
 
-       
-
-        
+        <button id="getReimbursements" class="btn btn-danger">Show All Reimbursements</button>
+        <button id="getHistoryButton" class="btn btn-danger">Approve or Deny Requsts</button>
+        <button id="approveDenyButton" class="btn btn-danger">View History of All Employees</button>
 
     </div>
 
