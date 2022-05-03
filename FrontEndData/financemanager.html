@@ -18,7 +18,8 @@
 		<!--https://www.w3schools.com/bootstrap/bootstrap_ref_css_buttons.asp-->
 
 </head>
-
+<!-- after body I added style = "background-color: and selected the color via the built in CSS functions for a nice background."-->
+<body style="background-color: rgb(188, 209, 205);">
 <br>
     
     <!--A div with a class of "container" makes it so that bootstrap will be applied to this div-->
@@ -36,13 +37,58 @@
         <!-- But now, we have a webpage and we need a way to store the data we gather -->
         <!-- I want a table of employee information which we'll SELECT from the DB -->     
 
-        <button id="getReimbursements" class="btn btn-danger">Show All Reimbursements</button>
-        <button id="getHistoryButton" class="btn btn-danger">Approve or Deny Requsts</button>
-        <button id="approveDenyButton" class="btn btn-danger">View History of All Employees</button>
+        
+        
+        <button id="approveDenyButton" class="btn btn-primary col-sm-3">Approve or Deny a Request</button>
 
+    </div>
+    <br>
+    <br>
+    <button id="getReimbursements" class="btn btn-primary col-sm-3">Show All Reimbursements</button>
+    <div id="table-row" class="row">
+        <table id="getAllReimbursementRequests" class="table table-dark table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+
+            <tbody id="allReimbursementRequests">
+                <!-- We'll leave the table body blank - it will be filled with data by our JS-->
+            </tbody>
+
+        </table>
+    </div>
+    <br>
+    <br>
+    <button id="getHistoryButton" class="btn btn-primary col-sm-3">View History of All Employee Reimbursements</button>
+    <div id="table-row" class="row">
+        <table id="getAllReimbursementHisotry" class="table table-dark table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Description</th>
+                    <th>Date Submitted</th>
+                    <th>Date Closed</th>
+                    <th>Status</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+
+            <tbody id="allReimbursementHistory">
+                <!-- We'll leave the table body blank - it will be filled with data by our JS-->
+            </tbody>
+
+        </table>
     </div>
 
     <!-- We need to link a JS file to this HTML file to give it functionality -->
-    <script src="krustyKrab.js"></script>
+    <script src="financemanager.js"></script>
 </body>
 </html>
