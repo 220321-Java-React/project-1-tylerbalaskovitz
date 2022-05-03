@@ -2,16 +2,18 @@ const url = "http://localhost:3000"; //putting our base URL in a variable for cl
 //eventually, we'll use this in fetch requests and make calls to our server by appending endpoints
 
 //add an event listener to give our buttons functionality (using DOM selection)
-//"When the getEmployeeButton gets clicked, execute the getEmployees function"
-document.getElementById("getEmployeeButton").addEventListener("click", getEmployees);
+//"When the getReimbursements gets clicked, execute the getEmployees function"
+document.getElementById("getReimbursements").addEventListener("click", getReimbursements);
 
-//"When the loginButton gets clicked, execute the loginFunction"
-document.getElementById("loginButton").addEventListener("click", loginFunction);
+//"When the getHistory gets clicked, execute the getHistory"
+document.getElementById("getHistory").addEventListener("click", getHistory);
+
+document.getElementById("aproveDenyButton").addEventListener("click", approveDenyButton)
 
 
-//getEmployees is an async function which has a fetch request to get employees from our server
+//getReimbursements is an async function which has a fetch request to get the Reimbursements from our server
 //remember, async makes a function return a Promise (which fetch requests return)
-async function getEmployees() {
+async function getReimbursements() {
 
     //we will send a fetch request to get out employee data
     //by default, fetch requests send GET requests (see how to send others like POST below)
@@ -32,7 +34,7 @@ async function getEmployees() {
         console.log(data);
 
         //For every Employee object we get back from our fetch request, put it in the table
-        for(let employee of data){
+        for(let reimbursements of data){
 
             //create a table row
             let row = document.createElement("tr");
@@ -73,9 +75,18 @@ async function getEmployees() {
 
 }
 
+//this function is used for the approveDenyButton above
+async function approveDenyButton(){
+
+
+
+
+}
+
+
 
 //this function will send the user-inputted login credentials to our server
-async function loginFunction(){
+async function getHistory(){
 
 //gather the user inputs from the login inputs
 //when the login button is clicked, the value from username and password will be put into variables
@@ -120,8 +131,6 @@ if(response.status === 202){
 
     //THIS IS PROBABLY WHERE YOUR REDIRECT WOULD BE IF USING MULTIPLE HTML PAGES
     //don't be intimidated, it's an easy google :)
-
-    location.href = 'https:/google.com/';
 
 } else {
     document.getElementById("welcomeHead").innerText="Login failed! Try Again";
