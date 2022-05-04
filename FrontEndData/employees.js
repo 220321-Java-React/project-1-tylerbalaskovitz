@@ -8,7 +8,7 @@ document.getElementById("getReimbursements").addEventListener("click", getReimbu
 //"When the getHistory gets clicked, execute the getHistory"
 document.getElementById("getHistory").addEventListener("click", getHistory);
 
-document.getElementById("aproveDenyButton").addEventListener("click", approveDenyButton)
+document.getElementById("submitRequest").addEventListener("click", approveDenyButton)
 
 
 //getReimbursements is an async function which has a fetch request to get the Reimbursements from our server
@@ -88,16 +88,7 @@ async function approveDenyButton(){
 //this function will send the user-inputted login credentials to our server
 async function getHistory(){
 
-//gather the user inputs from the login inputs
-//when the login button is clicked, the value from username and password will be put into variables
-let usern = document.getElementById("username").value;
-let userp = document.getElementById("password").value;
 
-//we want to send the user/pass as JSON, so we need a JS object first.
-let user = {
-    username:usern,
-    password:userp
-}
 //This object should reflect the LoginDTO in our Java... This is the data we want to transfer
 
 //for debugging purposes, print out the user object to the console

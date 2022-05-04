@@ -36,10 +36,20 @@
         <!-- With our CLI in P0, we were able to populate our DB data in the Java console -->
         <!-- But now, we have a webpage and we need a way to store the data we gather -->
         <!-- I want a table of employee information which we'll SELECT from the DB -->     
-
+        
+        <!-- using the form similar to the demo Brian gave to make the Managers able to approve or deny requests, or leave it pending-->
+        <button id="approveDenyButton" class="btn btn-primary col-sm-3">Show Items for Review</button>
+        <form>
+			<label for="reviewReimbursement">Review Item:</label>
+			<select name="reviewReimbursement" id="reviewReimbursement">
+				<option value="Approve">Approve</option>
+				<option value="Deny">Deny</option>
+                <option value="Pending">Pending</option>
+			</select>
+			<input type="submit" id="submitReview"/>
+		</form>
         
         
-        <button id="approveDenyButton" class="btn btn-primary col-sm-3">Approve or Deny a Request</button>
 
     </div>
     <br>

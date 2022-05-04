@@ -2,16 +2,19 @@ const url = "http://localhost:3000"; //putting our base URL in a variable for cl
 //eventually, we'll use this in fetch requests and make calls to our server by appending endpoints
 
 //add an event listener to give our buttons functionality (using DOM selection)
-//"When the getEmployeeButton gets clicked, execute the getEmployees function"
-document.getElementById("getEmployeeButton").addEventListener("click", getEmployees);
+//"When the getEmployeeButton gets clicked, execute the getReimbursements function"
+document.getElementById("getReimbursements").addEventListener("click", getReimbursements);
 
-//"When the loginButton gets clicked, execute the loginFunction"
-document.getElementById("loginButton").addEventListener("click", loginFunction);
+//"When the loginButton gets clicked, the get History Button is executed. "
+document.getElementById("getHistoryButton").addEventListener("click", getAllHistory);
+
+//this last 
+document.getElementById("submitReview").addEventListener("click", approveDenyButton);
 
 
-//getEmployees is an async function which has a fetch request to get employees from our server
+//getReimbursement is an async function which has a fetch request to get employees from our server
 //remember, async makes a function return a Promise (which fetch requests return)
-async function getEmployees() {
+async function getReimbursements() {
 
     //we will send a fetch request to get out employee data
     //by default, fetch requests send GET requests (see how to send others like POST below)
@@ -72,21 +75,17 @@ async function getEmployees() {
 
 
 }
+async function approveDenyButton(){
 
 
-//this function will send the user-inputted login credentials to our server
-async function loginFunction(){
-
-//gather the user inputs from the login inputs
-//when the login button is clicked, the value from username and password will be put into variables
-let usern = document.getElementById("username").value;
-let userp = document.getElementById("password").value;
-
-//we want to send the user/pass as JSON, so we need a JS object first.
-let user = {
-    username:usern,
-    password:userp
 }
+
+
+
+//this function will get the entire history from the database by communicating with the server via Javalin
+async function getAllHistory(){
+
+
 //This object should reflect the LoginDTO in our Java... This is the data we want to transfer
 
 //for debugging purposes, print out the user object to the console

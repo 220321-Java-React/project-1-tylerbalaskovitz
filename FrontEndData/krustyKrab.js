@@ -121,7 +121,7 @@ if(response.status === 202){
     //THIS IS PROBABLY WHERE YOUR REDIRECT WOULD BE IF USING MULTIPLE HTML PAGES
     //don't be intimidated, it's an easy google :)
 
-    location.href = 'https:/google.com/';
+    
 
 } else {
     document.getElementById("welcomeHead").innerText="Login failed! Try Again";
