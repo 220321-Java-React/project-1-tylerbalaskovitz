@@ -41,7 +41,7 @@ public class AuthController {
 			ctx.status(202);
 			
 			//send back our Employee object.
-			String employeeJSON = gson.toJson(as.login(LDTO.getUsername(), LDTO.getPassword()));
+			String employeeJSON = gson.toJson(as.login(LDTO.getUsername(), LDTO.getPassword(), LDTO.getUser_role_id()));
 			
 			//sends back our Employee JSON object
 			ctx.result(employeeJSON);

@@ -5,6 +5,7 @@ public class LoginDTO {
 	//Our loginDTO models only the username/password sent by the user
 		private String username;
 		private String password;
+		private int user_role_id;
 		
 		
 		//we made no args and all arg constructors to instantiate DTO objects
@@ -44,10 +45,17 @@ public class LoginDTO {
 
 
 		
-		//This allows us to print out this class
+		public LoginDTO(String username, String password, int user_role_id) {
+			super();
+			this.username = username;
+			this.password = password;
+			this.user_role_id = user_role_id;
+		}
+
+
 		@Override
 		public String toString() {
-			return "LoginDTO [username=" + username + ", password=" + password + "]";
+			return "LoginDTO [username=" + username + ", password=" + password + ", user_role_id=" + user_role_id + "]";
 		}
 		
 		
