@@ -3,18 +3,18 @@ const url = "http://localhost:3000"; //putting our base URL in a variable for cl
 
 //add an event listener to give our buttons functionality (using DOM selection)
 //"When the getEmployeeButton gets clicked, execute the getReimbursements function"
-document.getElementById("getReimbursements").addEventListener("click", getReimbursements);
+document.getElementById("getAllReimbursements").addEventListener("click", getAllReimbursements);
 
 //"When the loginButton gets clicked, the get History Button is executed. "
-document.getElementById("getHistoryButton").addEventListener("click", getAllHistory);
+document.getElementById("getAllHistoryButton").addEventListener("click", getAllHistory);
 
 //this last 
-document.getElementById("submitReview").addEventListener("click", approveDenyButton);
+document.getElementById("approveDenyReview").addEventListener("click", approveDenyButton);
 
 
 //getReimbursement is an async function which has a fetch request to get employees from our server
 //remember, async makes a function return a Promise (which fetch requests return)
-async function getReimbursements() {
+async function getAllReimbursements() {
 
     //we will send a fetch request to get out employee data
     //by default, fetch requests send GET requests (see how to send others like POST below)

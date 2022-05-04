@@ -5,6 +5,10 @@ import java.sql.SQLException;
 
 import com.revature.controllers.AuthController;
 import com.revature.controllers.EmployeeController;
+import com.revature.controllers.GetReimbursementHistoryController;
+import com.revature.controllers.GetReimbursementsController;
+import com.revature.controllers.SubmitTicketController;
+import com.revature.controllers.TicketController;
 import com.revature.utils.ConnectionUtil;
 
 import io.javalin.Javalin;
@@ -30,6 +34,15 @@ public class Launcher {
 		// and sends back HTTP requests
 		//HTTP Responses can be anything from data that was requested, to just a status code
 		//that says data was received
+		
+		
+		//Making Controller and classes that need to be created for the different buttons in the front end
+		
+		GetReimbursementsController grc = new GetReimbursementsController();
+		
+		GetReimbursementHistoryController grhc = new GetReimbursementHistoryController();
+		
+		SubmitTicketController stc = new SubmitTicketController();
 		
 		
 		//Instantiating an EmployeeController object so that we can access its Handlers

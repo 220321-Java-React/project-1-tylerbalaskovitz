@@ -48,13 +48,8 @@ console.log(response.status);
 
 //this fetch request will be used to get the role of the employee. If the user's role below will equal the 'Finance Manager below then the website will redirect you to the
 //finance managers page, whereas all other successful logins will redirect you to the employees page. 
-let userRoleResponse = await fetch(url+ "/user_role"), {
-    method: "POST",
-    body: JSON.stringify(user),
-    credentials: "include"
 
 
-}
 
 
 
