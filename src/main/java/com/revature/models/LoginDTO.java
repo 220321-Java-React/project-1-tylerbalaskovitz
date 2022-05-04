@@ -15,6 +15,8 @@ public class LoginDTO {
 		}
 
 
+		
+		
 		public LoginDTO(String username, String password) {
 			super();
 			this.username = username;
@@ -45,6 +47,16 @@ public class LoginDTO {
 
 
 		
+		public int getUser_role_id() {
+			return user_role_id;
+		}
+
+
+		public void setUser_role_id(int user_role_id) {
+			this.user_role_id = user_role_id;
+		}
+
+
 		public LoginDTO(String username, String password, int user_role_id) {
 			super();
 			this.username = username;

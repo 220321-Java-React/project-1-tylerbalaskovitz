@@ -8,7 +8,7 @@ document.getElementById("getReimbursements").addEventListener("click", getReimbu
 //"When the getHistory gets clicked, execute the getHistory"
 document.getElementById("getHistory").addEventListener("click", getHistory);
 
-document.getElementById("submitRequest").addEventListener("click", approveDenyButton)
+document.getElementById("submitRequest").addEventListener("click", submitRequests)
 
 
 //getReimbursements is an async function which has a fetch request to get the Reimbursements from our server
@@ -76,9 +76,10 @@ async function getReimbursements() {
 }
 
 //this function is used for the approveDenyButton above
-async function approveDenyButton(){
+async function submitRequests(){
 
-
+    let reimbursementDescription = document.getElementById("requestDescription").value;
+    let reimbursementAmount = document.getElementById("requestAmount").value;
 
 
 }
