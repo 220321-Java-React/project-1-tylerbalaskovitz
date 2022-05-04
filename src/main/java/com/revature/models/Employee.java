@@ -20,6 +20,9 @@ public class Employee {
 			this.first_name = first_name;
 			this.last_name = last_name;
 		}
+		public Employee(int i, String string, String string2, Role role) {
+			// TODO Auto-generated constructor stub
+		}
 		public int getUser_role_id() {
 			return user_role_id;
 		}

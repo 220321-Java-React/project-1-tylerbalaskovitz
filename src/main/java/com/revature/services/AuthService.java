@@ -10,7 +10,7 @@ public class AuthService {
 	//by calling some DAO method that gets employees where username = ? and password = ?
 	
 	//hard coded login
-	public Employee login(String username, String password, int user_role_id) {
+	public Employee login(String username, String password) {
 		if (username.equals("user") && password.equals("password")) {
 			
 			

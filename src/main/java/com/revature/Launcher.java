@@ -8,7 +8,6 @@ import com.revature.controllers.EmployeeController;
 import com.revature.controllers.GetReimbursementHistoryController;
 import com.revature.controllers.GetReimbursementsController;
 import com.revature.controllers.SubmitTicketController;
-import com.revature.controllers.TicketController;
 import com.revature.utils.ConnectionUtil;
 
 import io.javalin.Javalin;
@@ -37,12 +36,20 @@ public class Launcher {
 		
 		
 		//Making Controller and classes that need to be created for the different buttons in the front end
-		
+		//these are all used for the employee's HTML page in the front end.
 		GetReimbursementsController grc = new GetReimbursementsController();
 		
 		GetReimbursementHistoryController grhc = new GetReimbursementHistoryController();
 		
 		SubmitTicketController stc = new SubmitTicketController();
+		
+		
+		//These controllers are used for the 
+		
+		
+		
+		
+		
 		
 		
 		//Instantiating an EmployeeController object so that we can access its Handlers
