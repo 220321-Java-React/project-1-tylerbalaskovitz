@@ -78,8 +78,56 @@ async function getReimbursements() {
 //this function is used for the approveDenyButton above
 async function submitRequests(){
 
+    //when the submit button is clicked the data put into the fields is taken via the getElementById function with the specific ID's listed below.
     let reimbursementDescription = document.getElementById("requestDescription").value;
     let reimbursementAmount = document.getElementById("requestAmount").value;
+
+    //This is a JavaScript Object created so that we can have the employees send
+    //data via JSON
+    let newTicket = {
+        description: reimbursementDescription,
+        amount: reimbursementAmount
+    }
+    //the object above should be the same as the login DTO in our Java because this is
+    //what we want to transfer. IE: if there are private strings then
+    //their names should be the same for it to be sent nicely. 
+
+
+    //The console.log has been created so that way debugging can be done effectively
+    console.log(newTicket);
+
+    //Now we're creating a fetch request and need a specific URL for this to work
+    let response  = await fetch(url+"/login", {
+
+        method: "POST",
+        body: JSON.stringify(newTicket),
+        credentials: "include"
+
+    })
+
+
+        //this logs to the console the status code which is useful for debugging
+    console.log(response.status);
+
+
+    //finally control flow needs to be added to the end of the function if the
+    //'post' was or wasn't successful
+
+    //the status code we're looking for below is to see whether or not the 
+    //request has been accepted.
+
+    // in addition strict equality (===) is used to check the TYPE and the VALUE together
+    if(response.status === 202){
+
+        let data = await response.json();
+
+        alert("Your Ticket was successfully submitted.")
+
+
+    } else {
+        alert("Your Ticket Failed to Submit.")
+    }
+
 
 
 }
