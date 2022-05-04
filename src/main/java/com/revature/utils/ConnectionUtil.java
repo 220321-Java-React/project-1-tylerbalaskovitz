@@ -27,7 +27,7 @@ public class ConnectionUtil {
 			
 			//I'm going to put the credentials in Strings, and use those strings in a method that gets connections
 			//the schema name at the end of this url String is whatever you named the schema you want to connect to
-			String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=krusty_krab";
+			String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=ers_reimbursement";
 			String username = "postgres";
 			String password = "password";
 			

@@ -14,13 +14,12 @@ async function loginFunction(){
 //when the login button is clicked, the value from username and password will be put into variables
 let usern = document.getElementById("username").value;
 let userp = document.getElementById("password").value;
-let userRoleURL = url = "http://localhost:3000/user_role"
 
 //we want to send the user/pass as JSON, so we need a JS object first.
 let user = {
     username:usern,
     password:userp
-    userRole
+    
 }
 //This object should reflect the LoginDTO in our Java... This is the data we want to transfer
 
@@ -51,7 +50,7 @@ console.log(response.status);
 //finance managers page, whereas all other successful logins will redirect you to the employees page. 
 let userRoleResponse = await fetch(url+ "/user_role"), {
     method: "POST",
-    body: JSON.stringify(),
+    body: JSON.stringify(user),
     credentials: "include"
 
 
