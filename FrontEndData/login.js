@@ -14,11 +14,13 @@ async function loginFunction(){
 //when the login button is clicked, the value from username and password will be put into variables
 let usern = document.getElementById("username").value;
 let userp = document.getElementById("password").value;
+let user_role_id;
 
 //we want to send the user/pass as JSON, so we need a JS object first.
 let user = {
     username:usern,
-    password:userp
+    password:userp,
+    userRole:user_role_id
     
 }
 //This object should reflect the LoginDTO in our Java... This is the data we want to transfer
@@ -52,7 +54,6 @@ console.log(response.status);
 
 
 
-
 //control flow based on successful/unsuccessful login
 if(response.status === 202){
 
@@ -64,12 +65,12 @@ if(response.status === 202){
 
     //THIS IS PROBABLY WHERE YOUR REDIRECT WOULD BE IF USING MULTIPLE HTML PAGES
     //don't be intimidated, it's an easy google :)
-
+    let userRole = prompt("1 or 2");
     //this is the placeholder URL used for when there is a succesful login. Two separate functions need to be made depending on what is being pulled from the database.
     if (userRole != 1) {
-    location.href = 'http://localhost:3000/employees';
+    location.href = 'http://localhost:5500/employees.html';
     } else {
-    location.href = 'http://localhost:3000/financemanager';
+    location.href = 'http://localhost:5500/financemanager.html';
     }
 
 } else {
