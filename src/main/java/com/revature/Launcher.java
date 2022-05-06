@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import com.revature.controllers.AuthController;
 import com.revature.controllers.EmployeeController;
-import com.revature.controllers.GetReimbursementHistoryController;
+
 import com.revature.controllers.GetReimbursementsController;
 import com.revature.controllers.SubmitTicketController;
 import com.revature.utils.ConnectionUtil;
@@ -38,8 +38,7 @@ public class Launcher {
 		//Making Controller and classes that need to be created for the different buttons in the front end
 		//these are all used for the employee's HTML page in the front end.
 		GetReimbursementsController grc = new GetReimbursementsController();
-		
-		GetReimbursementHistoryController grhc = new GetReimbursementHistoryController();
+	
 		
 		SubmitTicketController stc = new SubmitTicketController();
 		

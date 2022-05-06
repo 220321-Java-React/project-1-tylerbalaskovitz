@@ -35,7 +35,7 @@ public class AuthService {
 
 
 	public Object login(String username, String password, int user_role_id) {
-		boolean erslogin = ld.login(username, password, user_role_id);
+		Login erslogin = ld.login(username, password, user_role_id);
 			
 		return erslogin;
 	}

@@ -20,7 +20,7 @@ let user_role_id;
 let user = {
     username:usern,
     password:userp,
-    userRole:user_role_id
+
     
 }
 //This object should reflect the LoginDTO in our Java... This is the data we want to transfer
@@ -67,7 +67,7 @@ if(response.status === 202){
     //don't be intimidated, it's an easy google :)
     
     //this is the placeholder URL used for when there is a succesful login. Two separate functions need to be made depending on what is being pulled from the database.
-    if (response.user_role_id != 1) {
+    if (data.user_role_id != 1) {
     location.href = 'http://localhost:5500/employees.html';
     } else {
     location.href = 'http://localhost:5500/financemanager.html';

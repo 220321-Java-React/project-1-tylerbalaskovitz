@@ -16,6 +16,7 @@ public class EmployeeController {
 		
 		//this handler will get the HTTP get request for all employees, and send back the
 		//employees from the database.
+		//ALl the handlers for the requests occurs at the Controller layer.
 		public Handler getEmployeesHandler = (ctx) -> {
 			
 			if(ctx.req.getSession(true) != null) {
