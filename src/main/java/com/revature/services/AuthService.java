@@ -17,11 +17,26 @@ public class AuthService {
 	LoginDAO ld = new LoginDAO();
 	
 	
-
+/*
 	public Object login(String username, String password) {
+		//did just have the following
 		
-		boolean erslogin = ld.login(username, password);
+		 * 
+		 * boolean erslogin = ld.login(username, password);
 		
+		return erslogin;
+		 * 
+		 * 
+		 
+		
+	}
+	
+*/
+
+
+	public Object login(String username, String password, int user_role_id) {
+		boolean erslogin = ld.login(username, password, user_role_id);
+			
 		return erslogin;
 	}
 

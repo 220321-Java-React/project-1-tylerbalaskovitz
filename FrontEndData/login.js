@@ -65,9 +65,9 @@ if(response.status === 202){
 
     //THIS IS PROBABLY WHERE YOUR REDIRECT WOULD BE IF USING MULTIPLE HTML PAGES
     //don't be intimidated, it's an easy google :)
-    let userRole = prompt("1 or 2");
+    
     //this is the placeholder URL used for when there is a succesful login. Two separate functions need to be made depending on what is being pulled from the database.
-    if (userRole != 1) {
+    if (response.user_role_id != 1) {
     location.href = 'http://localhost:5500/employees.html';
     } else {
     location.href = 'http://localhost:5500/financemanager.html';

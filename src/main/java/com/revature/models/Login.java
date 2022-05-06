@@ -30,6 +30,10 @@ public class Login {
 	public Login(String string) {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Login(int int1) {
+		// TODO Auto-generated constructor stub
+	}
 	public int getUser_role_id() {
 		return user_role_id;
 	}

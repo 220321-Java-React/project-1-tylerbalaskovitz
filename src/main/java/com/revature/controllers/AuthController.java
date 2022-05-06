@@ -31,7 +31,7 @@ public class AuthController {
 		LoginDTO LDTO = gson.fromJson(body, LoginDTO.class);
 		
 		//control flow to determine what happens in the event of successful/unsuccessful login
-		if(as.login(LDTO.getUsername(), LDTO.getPassword()) != null) {
+		if(as.login(LDTO.getUsername(), LDTO.getPassword(), LDTO.getUser_role_id()) != null) {
 			
 			//if login is successful, create a user session so they can access the application's
 			// functionalities.
@@ -41,7 +41,7 @@ public class AuthController {
 			ctx.status(202);
 			
 			//send back our Employee object.
-			String employeeJSON = gson.toJson(as.login(LDTO.getUsername(), LDTO.getPassword()));
+			String employeeJSON = gson.toJson(as.login(LDTO.getUsername(), LDTO.getPassword(), LDTO.getUser_role_id()));
 			
 			//sends back our Employee JSON object
 			ctx.result(employeeJSON);

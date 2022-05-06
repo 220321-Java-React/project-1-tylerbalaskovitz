@@ -10,12 +10,14 @@ import com.revature.models.Login;
 import com.revature.utils.ConnectionUtil;
 
 public class LoginDAO {
+	
+	
 
 	//two catch blues within the statement. One is to try connecting to the DB and the other to try
 	//the the passwords matching each other.
-	public boolean login (String username, String password) {
+	public boolean login (String username, String password, int user_role_id) {
 	try (Connection conn = ConnectionUtil.getConnection()){
-		String sql = "select * from ers_users WHERE username = ?;";
+		String sql = "select * from ers_users WHERE ers_username = ?;";
 				
 				String passwordtest = "";
 		
@@ -35,8 +37,10 @@ public class LoginDAO {
 				
 				//while going through the result list, we get the password.
 				while (rs.next()) {
-				Login login = new Login(rs.getString("pword"));
+				Login login = new Login(rs.getString("ers_password"));
+			
 				userLoginList.add(login);
+				
 				}
 				//we try the login with the new ArrayList at position 0 since there is only one
 				//value that is stored in the ArrayList titled userLoginList. This was done
@@ -55,8 +59,8 @@ public class LoginDAO {
 				} 
 				if (password.equals(passwordtest)) {
 					System.out.println("Log in was successful");
-					// Menu menu = new Menu();
-					
+					Login userRoleId = new Login(rs.getInt("user_role_id"));
+					userLoginList.add(userRoleId);
 				//	menu.displayMenu();
 					
 					return true;

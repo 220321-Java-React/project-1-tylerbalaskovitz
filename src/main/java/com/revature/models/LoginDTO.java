@@ -17,6 +17,20 @@ public class LoginDTO {
 
 		
 		
+	
+
+
+		public LoginDTO(int user_role_id) {
+			super();
+			this.user_role_id = user_role_id;
+		}
+
+
+
+
+
+
+
 		public LoginDTO(String username, String password) {
 			super();
 			this.username = username;
