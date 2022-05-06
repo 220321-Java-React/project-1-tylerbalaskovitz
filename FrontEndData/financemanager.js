@@ -18,7 +18,7 @@ async function getAllReimbursements() {
 
     //we will send a fetch request to get out employee data
     //by default, fetch requests send GET requests (see how to send others like POST below)
-    let response = await fetch(url + "/employees", {credentials: "include"});
+    let response = await fetch(url + "/getReimbursements", {credentials: "include"});
 
     //log the response in the console just to see the response object (good for debugging)
     console.log(response);
@@ -35,35 +35,52 @@ async function getAllReimbursements() {
         console.log(data);
 
         //For every Employee object we get back from our fetch request, put it in the table
-        for(let employee of data){
+        for(let reimbursement of data){
 
-            //create a table row
+            //create a table row, hence tr is table row
             let row = document.createElement("tr");
 
-            //create a data cell for each employee field
+            //create a data cell for each Reimbursement field hence td is table data
             let cell = document.createElement("td");
-            //fill the cell with the appropriate employee data
-            cell.innerHTML = employee.employee_id;
+
+            //fill the cell with the appropriate Reimbursement data
+            cell.innerHTML = reimbursement.reimb_id;
             //add the td element (data cell) to the tr element (table row)
             row.appendChild(cell);
 
             //we do this^^^^ for every column in employees
 
             let cell2 = document.createElement("td");
-            cell2.innerHTML = employee.first_name;
+            cell2.innerHTML = reimbursement.reimb_description;
             row.appendChild(cell2);
 
             let cell3 = document.createElement("td");
-            cell3.innerHTML = employee.last_name;
+            cell3.innerHTML = reimbursement.reimb_amount;
             row.appendChild(cell3);
 
             let cell4 = document.createElement("td");
-            cell4.innerHTML = employee.role.role_title;
+            cell4.innerHTML = reimbursement.reimb_receipt;
             row.appendChild(cell4);
+
+            let cell5 = document.createElement("td");
+            cell5.innerHTML = reimbursement.reimb_author;
+            row.appendChild(cell5);
+
+            let cell6 = document.createElement("td");
+            cell6.innerHTML = reimbursement.reimb_resolver;
+            row.appendChild(cell6);
+
+            let cell7 = document.createElement("td");
+            cell7.innerHTML = reimbursement.reimb_status_id;
+            row.appendChild(cell7);
+
+            let cell8 = document.createElement("td");
+            cell8.innerHTML = reimbursement.reimb_type_id;
+            row.appendChild(cell8);
 
             //append the tr (which we called "row") to the table body (tbody)
             //a new row will be appended FOR every employee that got returned in the fetch()
-            document.getElementById("employeeBody").appendChild(row);
+            document.getElementById("allReimbursementRequests").appendChild(row);
 
         }
         //so here, for every employee object, we create a new row, fill it with data, add it to table
