@@ -2,7 +2,11 @@ package com.revature.models;
 
 public class ErsReimbursement {
 
+	
+	
+	
 	private int reimb_id;
+	private int reimb_amount;
 	private int reimb_submitted;
 	private int reimb_resolved;
 	
@@ -16,6 +20,42 @@ public class ErsReimbursement {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	
+
+
+
+
+
+
+
+
+
+	public ErsReimbursement(int reimb_id, int reimb_amount, String reimb_description, int reimb_receipt,
+			int reimb_author, int reimb_resolver, int reimb_status_id, int reimb_type_id) {
+		super();
+		this.reimb_id = reimb_id;
+		this.reimb_amount = reimb_amount;
+		this.reimb_description = reimb_description;
+		this.reimb_receipt = reimb_receipt;
+		this.reimb_author = reimb_author;
+		this.reimb_resolver = reimb_resolver;
+		this.reimb_status_id = reimb_status_id;
+		this.reimb_type_id = reimb_type_id;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 	public ErsReimbursement(int reimb_id, int reimb_submitted, int reimb_resolved, String reimb_description,
 			int reimb_receipt, int reimb_author, int reimb_resolver, int reimb_status_id, int reimb_type_id) {
 		super();
@@ -29,9 +69,9 @@ public class ErsReimbursement {
 		this.reimb_status_id = reimb_status_id;
 		this.reimb_type_id = reimb_type_id;
 	}
-	public ErsReimbursement(int int1, int int2, String string, int int3, int int4, int int5, int int6, int int7) {
-		// TODO Auto-generated constructor stub
-	}
+	
+	
+	
 	@Override
 	public String toString() {
 		return "ErsReimbursement [reimb_id=" + reimb_id + ", reimb_submitted=" + reimb_submitted + ", reimb_resolved="
@@ -39,6 +79,11 @@ public class ErsReimbursement {
 				+ ", reimb_author=" + reimb_author + ", reimb_resolver=" + reimb_resolver + ", reimb_status_id="
 				+ reimb_status_id + ", reimb_type_id=" + reimb_type_id + "]";
 	}
+	
+	
+	
+	
+	
 	public int getReimb_id() {
 		return reimb_id;
 	}

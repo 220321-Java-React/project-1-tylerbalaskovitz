@@ -6,12 +6,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.revature.models.Employee;
 import com.revature.models.ErsReimbursement;
-import com.revature.models.RecordNames;
+
 import com.revature.utils.ConnectionUtil;
 
-public class EmployeeDAO {
+public class ErsDAO {
 
 	public ArrayList<ErsReimbursement> getEmployees() {
 		// TODO Auto-generated method stub

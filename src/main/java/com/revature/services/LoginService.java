@@ -8,7 +8,7 @@ import com.revature.models.LoginDTO;
 import com.revature.models.Role;
 
 //You'll need to get this employee data from the DAO and DB
-public class AuthService {
+public class LoginService {
 
 
 	

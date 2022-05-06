@@ -5,19 +5,20 @@ import io.javalin.http.Handler;
 
 
 import com.google.gson.Gson;
-import com.revature.models.Employee;
-import com.revature.services.EmployeeService;
 
-public class EmployeeController {
+import com.revature.models.ErsReimbursement;
+import com.revature.services.ErsService;
+
+public class ErsController {
 
 	//we need an EmployeeService object
-		EmployeeService es = new EmployeeService();
+		ErsService es = new ErsService();
 		
 		
 		//this handler will get the HTTP get request for all employees, and send back the
 		//employees from the database.
 		//ALl the handlers for the requests occurs at the Controller layer.
-		public Handler getEmployeesHandler = (ctx) -> {
+		public Handler getERSReimbursements = (ctx) -> {
 			
 			if(ctx.req.getSession(true) != null) {
 				
@@ -26,7 +27,7 @@ public class EmployeeController {
 			
 			
 			//we need an ArrayList of Employee objects. (This is grabbed from the service layer)
-			ArrayList<Employee> employees = es.getEmployees();
+			ArrayList<ErsReimbursement> ErsReimbursement = es.getEmployees();
 			
 			
 			
@@ -38,7 +39,7 @@ public class EmployeeController {
 			
 			
 			//use the JSON .toJSON() method to turn our Java into JSON
-			String JSONEmployees = gson.toJson(employees);
+			String JSONEmployees = gson.toJson(ErsReimbursement);
 			
 			//Give a response containg our JSON string back to the webpage (or wherever the HTTP request
 			//came from.

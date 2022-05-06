@@ -3,10 +3,9 @@ package com.revature;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import com.revature.controllers.AuthController;
-import com.revature.controllers.EmployeeController;
+import com.revature.controllers.LoginController;
+import com.revature.controllers.ErsController;
 
-import com.revature.controllers.GetReimbursementsController;
 import com.revature.controllers.SubmitTicketController;
 import com.revature.utils.ConnectionUtil;
 
@@ -37,7 +36,7 @@ public class Launcher {
 		
 		//Making Controller and classes that need to be created for the different buttons in the front end
 		//these are all used for the employee's HTML page in the front end.
-		GetReimbursementsController grc = new GetReimbursementsController();
+		
 	
 		
 		SubmitTicketController stc = new SubmitTicketController();
@@ -52,10 +51,10 @@ public class Launcher {
 		
 		
 		//Instantiating an EmployeeController object so that we can access its Handlers
-		EmployeeController ec = new EmployeeController();
+		ErsController ec = new ErsController();
 		
 		//Instantiating an AUthController object so we can access its handlers.
-		AuthController ac = new AuthController();
+		LoginController ac = new LoginController();
 		
 		
 		//Typical Javalin syntax to create a Javalin object
@@ -74,7 +73,7 @@ public class Launcher {
 		
 		//handler ending in /employee that takes in get requests, and will return all employees
 		//the app.get() emthod takes in a URL endpoint and a place in the server to send the request to
-		app.get("/employees", ec.getEmployeesHandler);
+		app.get("/getReimbursements", ec.getERSReimbursements);
 		
 		
 		//this handler ends in /login for taking in POST requests
@@ -83,6 +82,7 @@ public class Launcher {
 		//to send the request to 
 		app.post("/login", ac.loginHandler);
 		
+		//app.post("/submit, stc.submitTicketHandler)
 		
 		
 	}

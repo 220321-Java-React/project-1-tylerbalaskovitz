@@ -4,14 +4,14 @@ package com.revature.controllers;
 //GSON is only in the controller layer.
 import com.google.gson.Gson;
 import com.revature.models.LoginDTO;
-import com.revature.services.AuthService;
+import com.revature.services.LoginService;
 
 import io.javalin.http.Handler;
 
-public class AuthController {
+public class LoginController {
 
 	//we need an AuthService object to use its login method.
-	AuthService as = new AuthService();
+	LoginService as = new LoginService();
 	
 	
 	//we need a LoginHandler to handle login requests (which come to app.post("/login", handler)
