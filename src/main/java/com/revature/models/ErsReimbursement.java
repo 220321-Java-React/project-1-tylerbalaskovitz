@@ -29,6 +29,9 @@ public class ErsReimbursement {
 		this.reimb_status_id = reimb_status_id;
 		this.reimb_type_id = reimb_type_id;
 	}
+	public ErsReimbursement(int int1, int int2, String string, int int3, int int4, int int5, int int6, int int7) {
+		// TODO Auto-generated constructor stub
+	}
 	@Override
 	public String toString() {
 		return "ErsReimbursement [reimb_id=" + reimb_id + ", reimb_submitted=" + reimb_submitted + ", reimb_resolved="
