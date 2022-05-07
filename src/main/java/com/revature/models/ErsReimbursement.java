@@ -5,6 +5,24 @@ public class ErsReimbursement {
 	
 	
 	
+	public int getReimb_amount() {
+		return reimb_amount;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setReimb_amount(int reimb_amount) {
+		this.reimb_amount = reimb_amount;
+	}
 	private int reimb_id;
 	private int reimb_amount;
 	private int reimb_submitted;
