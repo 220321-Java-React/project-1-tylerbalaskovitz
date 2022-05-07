@@ -9,8 +9,14 @@ public class SubmitTicketService {
 	
 	public Object submitTicket (ErsReimbursement description) {
 		
-		ErsReimbursement ersTicket = std.submitTicket(description);
+	
+
+	Object submitTicket(String reimb_description, int reimb_amount) {
+		ErsReimbursement ersTicket = std.submitTicket( reimb_description, reimb_amount);
 		return ersTicket;
+		
 	}
+
+}
 
 }
