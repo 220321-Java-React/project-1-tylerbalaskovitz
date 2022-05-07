@@ -6,7 +6,7 @@ const url = "http://localhost:3000"; //putting our base URL in a variable for cl
 document.getElementById("getPendingRequests").addEventListener("click", getReimbursements);
 
 //"When the getHistory gets clicked, execute the getHistory"
-document.getElementById("getPastTickets").addEventListener("click", getHistory);
+//document.getElementById("getPastTickets").addEventListener("click", getHistory);
 
 document.getElementById("submitRequest").addEventListener("click", submitRequests)
 
@@ -88,9 +88,11 @@ async function submitRequests(){
 
     //This is a JavaScript Object created so that we can have the employees send
     //data via JSON
+    //The name of the values below should model JSON
+    //the values on the left are the JSON values thatt are being sent to the database, where as the right side is the values taken from your HTML elements
     let newTicket = {
-        description: reimbursementDescription,
-        amount: reimbursementAmount
+        reimb_description: reimbursementDescription,
+        reimb_amount: reimbursementAmount
     }
     //the object above should be the same as the login DTO in our Java because this is
     //what we want to transfer. IE: if there are private strings then

@@ -30,24 +30,20 @@ public Handler SubmitTicketHandler = (ctx) -> {
 		//when I'm trying to do sessions 
 		
 		//control flow to determine what happens in the event of successful/unsuccessful login
+		/*
 		if(sts.submitTicket(ERDTO.getReimb_description(), ERDTO.getReimb_amount()) != null) {
 			
 			//if login is successful, create a user session so they can access the application's
 			// functionalities.
-			ctx.req.getSession();
+			*/
 			
 			//return a successful login code
 			ctx.status(202);
 			
-			//send back our Employee object.
-			String employeeJSON = gson.toJson(sts.submitTicket(ERDTO.getReimb_description(), ERDTO.getReimb_amount()));
-			//sends back our Employee JSON object
-			ctx.result(employeeJSON);
+			sts.submitTicket(ERDTO);
 			
-		} else {
-			ctx.status(401); //401 stands for "unauthorized"
-			System.out.println("Your Ticket Failed To Submit");
-		}
+		
+		
 		
 		
 		

@@ -18,7 +18,7 @@ public class SubmitTicketDAO {
 			//this SQL statement uses the INSERT and INTO to put data into the SQL database so
 			//that we can add new information into the DBeaver Database.
 			
-			String sql = "insert into ers_reimbursement (reimb_ammount, reimb_description, reimb_receipt, reimb_author, reimb_resolver, reimb_status, reimb_type_id)"
+			String sql = "insert into ers_reimbursement (reimb_ammount, reimb_description, reimb_receipt, reimb_author, reimb_resolver, reimb_status_id, reimb_type_id)"
 					+ "values (?, ?, 1, 1, 1, 1, 1); ";
 					
 			

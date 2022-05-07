@@ -82,7 +82,7 @@ public class Launcher {
 		//to send the request to 
 		app.post("/login", ac.loginHandler);
 		
-		//app.post("/submit, stc.submitTicketHandler)
+		app.post("/submit", stc.SubmitTicketHandler);
 		
 		//app.put this is for updating tickets.
 	}
