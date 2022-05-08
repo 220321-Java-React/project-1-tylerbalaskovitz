@@ -65,10 +65,7 @@ public class LoginDAO {
 				} 
 				if (password.equals(passwordtest)) {
 					System.out.println("Log in was successful");
-					
-				//	menu.displayMenu();
-					
-					
+		
 					
 				} else {
 					

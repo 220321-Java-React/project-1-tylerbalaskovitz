@@ -2,7 +2,6 @@ package com.revature.controllers;
 
 import com.google.gson.Gson;
 import com.revature.models.ErsReimbursement;
-import com.revature.models.LoginDTO;
 import com.revature.services.SubmitTicketService;
 
 import io.javalin.http.Handler;

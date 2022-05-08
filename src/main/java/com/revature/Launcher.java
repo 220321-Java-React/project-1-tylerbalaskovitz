@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import com.revature.controllers.LoginController;
+import com.revature.controllers.ReviewTicketController;
 import com.revature.controllers.ErsController;
 
 import com.revature.controllers.SubmitTicketController;
@@ -43,11 +44,7 @@ public class Launcher {
 		
 		
 		//These controllers are used for the 
-		
-		
-		
-		
-		
+		ReviewTicketController rtc = new ReviewTicketController();
 		
 		
 		//Instantiating an EmployeeController object so that we can access its Handlers
@@ -84,7 +81,7 @@ public class Launcher {
 		
 		app.post("/submit", stc.SubmitTicketHandler);
 		
-		//app.put this is for updating tickets.
+		app.put("/review", rtc.ReviewTicketHandler); //put this is for updating tickets.
 	}
 	
     	
