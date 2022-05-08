@@ -10,6 +10,11 @@ document.getElementById("getPendingRequests").addEventListener("click", getReimb
 
 document.getElementById("submitRequest").addEventListener("click", submitRequests)
 
+document.getElementById("logOutButton").addEventListener("click", logOut)
+
+function logOut(){
+location.href = 'http://localhost:5500/login.html';
+};
 
 //getReimbursements is an async function which has a fetch request to get the Reimbursements from our server
 //remember, async makes a function return a Promise (which fetch requests return)

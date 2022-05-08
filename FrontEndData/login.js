@@ -16,6 +16,8 @@ let usern = document.getElementById("username").value;
 let userp = document.getElementById("password").value;
 let user_role_id;
 
+
+
 //we want to send the user/pass as JSON, so we need a JS object first.
 let user = {
     username:usern,

@@ -11,6 +11,12 @@ document.getElementById("getAllReimbursements").addEventListener("click", getAll
 //this last button will be used to get the information from the two tables since the ID will be used 
 document.getElementById("submitReview").addEventListener("click", approveDenyButton);
 
+document.getElementById("logOutButton").addEventListener("click", logOut)
+
+function logOut(){
+location.href = 'http://localhost:5500/login.html';
+};
+
 
 //getReimbursement is an async function which has a fetch request to get employees from our server
 //remember, async makes a function return a Promise (which fetch requests return)
