@@ -14,11 +14,11 @@ public class ReviewTicketDAO {
 		
 		try (Connection conn = ConnectionUtil.getConnection()){
 			
-			//this SQL statement uses the INSERT and INTO to put data into the SQL database so
-			//that we can add new information into the DBeaver Database.
+			//this SQL statement uses the UPDATE and SET to update data into the SQL database so
+			//that we can update information into the DBeaver Database.
 			
-			String sql = "UPDATE ers_reimbursement SET reimb_status_id = '?' WHERE reimb_id ='?';"
-					+ "values (?, ?);";
+			String sql = "UPDATE ers_reimbursement SET reimb_status_id = ? WHERE reimb_id = ?;";
+					
 					
 			
 			

@@ -21,8 +21,8 @@ VALUES (235, 'Pizza Party for Johns Birthday', 235),
 
 DROP TABLE ers_reimbursement 
 
-
 SELECT * FROM ers_reimbursement;
+
 
 CREATE TABLE ers_users (
 ers_users_id serial PRIMARY KEY, 
