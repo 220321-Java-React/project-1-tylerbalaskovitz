@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krusty Krab</title>
+    <title>ERS Login</title>
     
     <!-- Here, I've pasted in some bootstrap for the sake of STYLE-->
     <link
@@ -19,13 +19,13 @@
 
 </head>
 <!-- after body I added style = "background-color: and selected the color via the built in CSS functions for a nice background."-->
-<body style="background-color: rgb(188, 209, 205);">
+<body style="background-color: rgb(0, 0, 0);">
 
 <br>
     
     <!--A div with a class of "container" makes it so that bootstrap will be applied to this div-->
     <!-- Everything within this div will get styled with the appropriate bootstrap styling-->
-    <div class="container">
+    <div class="container" style="color: white; width: 300px; border: 3px solid rgb(255, 255, 255); padding: 20px; margin: 20px 0;">
 
         <h3>Welcome to the Employee Reimbursement System Login!</h3>
 
@@ -33,7 +33,7 @@
             <h3 id="welcomeHead">Please Enter Your Username and Password</h3>
             <input id="username" placeholder="Username"/>
             <input id="password" type="password" placeholder="Password"/>
-            <button id="loginButton" class="btn btn-primary col-sm-3">Login</button>
+            <button id="loginButton" class="btn btn-primary col-sm-3" style="background-color: gray; border: white;">Login</button>
         <!-- col-sm-3? this will make the login button take up 25% of the row -->
         <!-- col-sm-12 for instance would make the button take up the entire row -->
         </div>

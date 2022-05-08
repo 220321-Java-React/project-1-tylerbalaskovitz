@@ -19,7 +19,7 @@
 
 </head>
 <!-- after body I added style = "background-color: and selected the color via the built in CSS functions for a nice background."-->
-<body style="background-color: rgb(188, 209, 205);">
+<body style="background-color: rgb(0, 0, 0);">
     <br>
 
   
@@ -28,7 +28,7 @@
     <!-- Everything within this div will get styled with the appropriate bootstrap styling-->
     <div class="container">
 
-        <h3>Welcome Finance Managers!</h3>
+        <h3 style="color: white">Welcome Finance Managers!</h3>
 
        
 
@@ -41,11 +41,11 @@
         
         <!-- using the form similar to the demo Brian gave to make the Managers able to approve or deny requests, or leave it pending-->
         
-        <div id="approveDenyReview" class="row">
+        <div id="approveDenyReview" class="row" style="color: white; width: 600px; border: 3px solid rgb(255, 255, 255); padding: 20px; margin: 20px 0;">
             <h5 id="submitRequestHead">Please Input the Reimbursement ID (Row) and the Reimbursement Status to Update</h5>
             <input id="reimbursementID" type ="number" placeholder="Reimbursement ID"/>
             <input id="reimbursementStatusID" type="number" placeholder="Reimbursement Status Number    (1 - Approve, 2 - Denied, 3 - Pending)" min="1" max="3" />
-            <button id="submitReview" class="btn btn-primary col-sm-3">Update Ticket</button>
+            <button id="submitReview" class="btn btn-primary col-sm-3" style="color: black; background-color:gray; color: white; border: white;">Update Ticket</button>
         <!-- col-sm-3? this will make the login button take up 25% of the row -->
         <!-- col-sm-12 for instance would make the button take up the entire row -->
         </div>
@@ -59,7 +59,7 @@
     <br>
     <br>
     <div class = "container">
-    <button id="getAllReimbursements" class="btn btn-primary col-sm-3">Show All Reimbursements</button>
+    <button id="getAllReimbursements" class="btn btn-primary col-sm-3" style="color: black; background-color:gray; color: white; border: white;">Show All Reimbursements</button>
     <div id="table-row" class="row">
         <table id="getAllReimbursementRequests" class="table table-dark table-bordered table-hover table-striped">
             <thead>
