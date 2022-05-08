@@ -125,9 +125,11 @@ async function submitRequests(){
     // in addition strict equality (===) is used to check the TYPE and the VALUE together
     if(response.status === 202){
 
+        alert("Your Ticket was successfully submitted.")
+
         let data = await response.json();
 
-        alert("Your Ticket was successfully submitted.")
+      
 
 
     } else {

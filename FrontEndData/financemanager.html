@@ -20,8 +20,10 @@
 </head>
 <!-- after body I added style = "background-color: and selected the color via the built in CSS functions for a nice background."-->
 <body style="background-color: rgb(188, 209, 205);">
-<br>
-    
+    <br>
+
+  
+
     <!--A div with a class of "container" makes it so that bootstrap will be applied to this div-->
     <!-- Everything within this div will get styled with the appropriate bootstrap styling-->
     <div class="container">
@@ -38,22 +40,25 @@
         <!-- I want a table of employee information which we'll SELECT from the DB -->     
         
         <!-- using the form similar to the demo Brian gave to make the Managers able to approve or deny requests, or leave it pending-->
-        <button id="approveDenyReview" class="btn btn-primary col-sm-3">Show Items for Review</button>
-        <form>
-			<label for="reviewReimbursement">Review Item:</label>
-			<select name="reviewReimbursement" id="reviewReimbursement">
-				<option value="Approve">Approve</option>
-				<option value="Deny">Deny</option>
-                <option value="Pending">Pending</option>
-			</select>
-			<input type="submit" id="submitReview"/>
-		</form>
+        
+        <div id="approveDenyReview" class="row">
+            <h5 id="submitRequestHead">Please Input the Reimbursement ID (Row) and the Reimbursement Status to Update</h5>
+            <input id="reimbursementID" type ="number" placeholder="Reimbursement ID"/>
+            <input id="reimbursementStatusID" type="number" placeholder="Reimbursement Status Number    (1 - Approve, 2 - Denied, 3 - Pending)" min="1" max="3" />
+            <button id="submitReview" class="btn btn-primary col-sm-3">Update Ticket</button>
+        <!-- col-sm-3? this will make the login button take up 25% of the row -->
+        <!-- col-sm-12 for instance would make the button take up the entire row -->
+        </div>
         
         
+        
+        
+
 
     </div>
     <br>
     <br>
+    <div class = "container">
     <button id="getAllReimbursements" class="btn btn-primary col-sm-3">Show All Reimbursements</button>
     <div id="table-row" class="row">
         <table id="getAllReimbursementRequests" class="table table-dark table-bordered table-hover table-striped">
@@ -77,6 +82,7 @@
 
         </table>
     </div>
+</div>
     <br>
     <br>
     
@@ -109,5 +115,6 @@
 
     <!-- We need to link a JS file to this HTML file to give it functionality -->
     <script src="financemanager.js"></script>
-</body>
+
+    </body>
 </html>

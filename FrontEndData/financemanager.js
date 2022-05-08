@@ -5,11 +5,11 @@ const url = "http://localhost:3000"; //putting our base URL in a variable for cl
 //"When the getEmployeeButton gets clicked, execute the getReimbursements function"
 document.getElementById("getAllReimbursements").addEventListener("click", getAllReimbursements);
 
-//"When the loginButton gets clicked, the get History Button is executed. "
-document.getElementById("getAllHistoryButton").addEventListener("click", getAllHistory);
+//"When the  gets clicked, the get History Button is executed. "
 
-//this last 
-document.getElementById("approveDenyReview").addEventListener("click", approveDenyButton);
+
+//this last button will be used to get the information from the two tables since the ID will be used 
+document.getElementById("submitReview").addEventListener("click", approveDenyButton);
 
 
 //getReimbursement is an async function which has a fetch request to get employees from our server
@@ -95,51 +95,59 @@ async function getAllReimbursements() {
 async function approveDenyButton(){
 
 
-}
+ //when the submit button is clicked the data put into the fields is taken via the getElementById function with the specific ID's listed below.
+ let reimbursementID = document.getElementById("reimbursementID").value;
+ let reimbursementStatusID = document.getElementById("reimbursementStatusID").value;
+
+ //This is a JavaScript Object created so that we can have the employees send
+ //data via JSON
+ //The name of the values below should model JSON
+ //the values on the left are the JSON values thatt are being sent to the database, where as the right side is the values taken from your HTML elements
+ let reviewTicket = {
+        reimb_id: reimbursementID,
+        reimb_status_id: reimbursementStatusID
+ }
+ //the object above should be the same as the login DTO in our Java because this is
+ //what we want to transfer. IE: if there are private strings then
+ //their names should be the same for it to be sent nicely. 
 
 
+ //The console.log has been created so that way debugging can be done effectively
+ console.log(reviewTicket);
 
-//this function will get the entire history from the database by communicating with the server via Javalin
-async function getAllHistory(){
+ //Now we're creating a fetch request and need a specific URL for this to work
+ let response  = await fetch(url+"/review", {
 
+     method: "PUT",
+     body: JSON.stringify(reviewTicket),
+     credentials: "include"
 
-//This object should reflect the LoginDTO in our Java... This is the data we want to transfer
-
-//for debugging purposes, print out the user object to the console
-console.log(user);
-
-//fetch request to the server
-//rememeber, the second parameter in a fetch is for configuring our fetch request
-//fetch sends a GET by default, but we need a POST, as well as some other configs
-let response = await fetch(url+"/login", {
-
-    method: "POST", //send a POST request (would be a GET if we didn't specify...)
-    body: JSON.stringify(user), //turning our user object into JSON to send to the server
-    credentials: "include"
-    //this last line will ensure that the cookie is captured (so that we can have a session)
-    //future fetches after login will require this "include" value 
-})
-
-//log the response status code, useful for debugs
-console.log(response.status);
+ })
 
 
+     //this logs to the console the status code which is useful for debugging
+ console.log(response.status);
 
-//control flow based on successful/unsuccessful login
-if(response.status === 202){
 
-    //converting from json to JS
-    let data = await response.json();
+ //finally control flow needs to be added to the end of the function if the
+ //'post' was or wasn't successful
 
-    //wipe our login row and welcome the user
-    document.getElementById("loginRow").innerText="Welcome " + data.first_name + "!!";
+ //the status code we're looking for below is to see whether or not the 
+ //request has been accepted.
 
-    //THIS IS PROBABLY WHERE YOUR REDIRECT WOULD BE IF USING MULTIPLE HTML PAGES
-    //don't be intimidated, it's an easy google :)
+ // in addition strict equality (===) is used to check the TYPE and the VALUE together
+ if(response.status === 202){
 
-} else {
-    document.getElementById("welcomeHead").innerText="Login failed! Try Again";
-    document.getElementById("welcomeHead").style.color = "red";
-}
+    alert("Your Ticket was successfully updated. Congratulations.")
+    
+     let data = await response.json();
+
+     
+
+
+ } else {
+     alert("Your Ticket Failed to Submit.")
+ }
+
 
 }
