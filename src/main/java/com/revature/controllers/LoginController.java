@@ -1,6 +1,9 @@
 package com.revature.controllers;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 //GSON is only in the controller layer.
 import com.google.gson.Gson;
 import com.revature.models.LoginDTO;
@@ -9,7 +12,8 @@ import com.revature.services.LoginService;
 import io.javalin.http.Handler;
 
 public class LoginController {
-
+	//the Logger class is imported through the MAVEN dependencies found in the POM.XML
+	Logger log = LogManager.getLogger(LoginController.class);
 	//we need an AuthService object to use its login method.
 	LoginService as = new LoginService();
 	
@@ -21,7 +25,7 @@ public class LoginController {
 		//with POST requests, we have data coming in, which we access with ctx.body();
 		//the body means the BODY of the request-- ie the data the user sent.
 		String body = ctx.body();
-		
+		log.info("The Login Handler's was a created " + ctx.body());
 		//create a new GSON object to make Java <-> JSON conversions.
 		Gson gson = new Gson();
 		
@@ -36,6 +40,7 @@ public class LoginController {
 			//if login is successful, create a user session so they can access the application's
 			// functionalities.
 			ctx.req.getSession();
+			log.info("The Login Handler's session information was logged" + ctx.req.getSession());
 			
 			//return a successful login code
 			ctx.status(202);
@@ -45,10 +50,12 @@ public class LoginController {
 			
 			//sends back our Employee JSON object
 			ctx.result(employeeJSON);
+			log.info("JSON object was was logged" + ctx.result(employeeJSON));
 			
 		} else {
 			ctx.status(401); //401 stands for "unauthorized"
 			System.out.println("Login failed");
+			log.warn("The Login has failed" + ctx.status(401));
 		}
 		
 		

@@ -23,7 +23,7 @@ public class ErsDAO {
 		try (Connection conn = ConnectionUtil.getConnection()){
 			
 			//This string sql represents of the SQL Statement
-			String sql = "select * from ers_reimbursement;";
+			String sql = "select * from ers_reimbursement ORDER BY reimb_id;";
 				
 			
 			

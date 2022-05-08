@@ -1,15 +1,18 @@
 package com.revature.controllers;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.google.gson.Gson;
 import com.revature.models.ErsReimbursement;
 import com.revature.services.ReviewTicketService;
-import com.revature.services.SubmitTicketService;
+
 
 import io.javalin.http.Handler;
 
 public class ReviewTicketController {
 
-	
+	Logger log = LogManager.getLogger(ReviewTicketController.class);
 	ReviewTicketService rts = new ReviewTicketService();
 	
 	public Handler ReviewTicketHandler = (ctx) -> {
@@ -18,7 +21,7 @@ public class ReviewTicketController {
 			//with POST requests, we have data coming in, which we access with ctx.body();
 			//the body means the BODY of the request-- ie the data the user sent.
 			String body = ctx.body();
-			
+			log.info("The string body of the ReviewTicketHandler has been created " + ctx.body());
 			//create a new GSON object to make Java <-> JSON conversions.
 			Gson gson = new Gson();
 			
@@ -40,9 +43,8 @@ public class ReviewTicketController {
 				
 				//return a successful login code
 				ctx.status(202);
-				
+				log.info("The Ticket Review was a success " + ctx.status(202));
 				rts.reviewTicket(RTDTO);
-		
 };
 
 }

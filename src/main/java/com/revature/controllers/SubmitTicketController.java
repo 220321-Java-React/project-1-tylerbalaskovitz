@@ -1,5 +1,8 @@
 package com.revature.controllers;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.google.gson.Gson;
 import com.revature.models.ErsReimbursement;
 import com.revature.services.SubmitTicketService;
@@ -8,6 +11,8 @@ import io.javalin.http.Handler;
 
 public class SubmitTicketController {
 
+	Logger log = LogManager.getLogger(SubmitTicketController.class);
+	
 	SubmitTicketService sts = new SubmitTicketService();
 	
 public Handler SubmitTicketHandler = (ctx) -> {
@@ -24,7 +29,7 @@ public Handler SubmitTicketHandler = (ctx) -> {
 		//turn that JSON string directly into a ERSReimbursement object
 		//the method fromJSON() is the method that takes JSON and turns it into a Java Object.
 		ErsReimbursement ERDTO = gson.fromJson(body, ErsReimbursement.class);
-		
+		log.info("The Employee Reimbursement Data Object was created: " + ERDTO);
 		//the control flow should have the two variables in the paramaters that I'm going to submit, more can be added
 		//when I'm trying to do sessions 
 		
@@ -38,7 +43,8 @@ public Handler SubmitTicketHandler = (ctx) -> {
 			
 			//return a successful login code
 			ctx.status(202);
-			
+			log.info("The Submit Ticket Controller Status was a success: " + ctx.status(202));
+
 			sts.submitTicket(ERDTO);
 			
 		

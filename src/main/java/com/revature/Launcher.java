@@ -3,6 +3,9 @@ package com.revature;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.revature.controllers.LoginController;
 import com.revature.controllers.ReviewTicketController;
 import com.revature.controllers.ErsController;
@@ -16,14 +19,17 @@ public class Launcher {
 
     public static void main(String[] args) {
     	
-
+    	Logger log = LogManager.getLogger(Launcher.class);
+    	
 		//In this try/catch, we're just testing whether our Connection (from the ConnectionUtil Class) is successful
 		//remember - the getConnection() method will return a Connection Object if you connect successfully
 		try(Connection conn = ConnectionUtil.getConnection()){
 			System.out.println("CONNECTION SUCCESSFUL :)");
+			log.info("The user's connection was a success: " + conn);
 		} catch (SQLException e) { //if creating this connection fails... catch the exception and print the stack trace
 			System.out.println("connection failed... :(");
 			e.printStackTrace();
+			log.warn("The connection was has failed");
 		}
 		
 		// we now have a webpage that needs to send an HTTP request to our Java Server!
@@ -57,13 +63,18 @@ public class Launcher {
 		//Typical Javalin syntax to create a Javalin object
 		Javalin app = Javalin.create(
 				
+				
+				
 				//the config lambda lets us specify certain configurations.
 				config -> {
 					config.enableCorsForAllOrigins(); 
 					//this allows us to process JavaScript requests from anywhere.
+					
+					log.info("The configuration is: " + config);
 				}
 			).start(3000);
 		
+		log.info("The Javalin App is: " + app);
 		//We need to make some endpoint handlers, which will take in requests and send them where
 		//they need to go. Javalin endpoint handlers are like the traffic cop to your server. They take traffic
 		//and direct it.

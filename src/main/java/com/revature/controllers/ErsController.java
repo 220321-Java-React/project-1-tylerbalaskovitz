@@ -1,16 +1,21 @@
 package com.revature.controllers;
 
 import java.util.ArrayList;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import io.javalin.http.Handler;
 
 
 import com.google.gson.Gson;
-
 import com.revature.models.ErsReimbursement;
 import com.revature.services.ErsService;
 
 public class ErsController {
 
+	Logger log = LogManager.getLogger(ErsController.class);
+	
 	//we need an EmployeeService object
 		ErsService es = new ErsService();
 		
@@ -22,7 +27,7 @@ public class ErsController {
 			
 			if(ctx.req.getSession(true) != null) {
 				
-				
+				log.info("The ERS Reimbursements Handler was a success" + ctx);	
 			
 			
 			
@@ -35,7 +40,7 @@ public class ErsController {
 			//(since we can only transfer JSON, not Java)
 			Gson gson = new Gson();
 			
-			
+			log.info("The GSON inside of ERS Reimbursements Handler was a success" + gson);
 			
 			
 			//use the JSON .toJSON() method to turn our Java into JSON
@@ -47,6 +52,7 @@ public class ErsController {
 			ctx.status(200); //.status() sets the HTTP status code. 200 stands for "Ok"
 			} else {
 				ctx.status(401);
+				log.warn("There was a failure within the ERS Reimbursement Handler");
 			}
 			
 		};
